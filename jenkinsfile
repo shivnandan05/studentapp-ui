@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/mayurpandit25/studentapp-ui.git'
+                git branch: 'master', url: 'https://github.com/shivnandan05/studentapp-ui.git'
             }
         }
 
@@ -32,7 +32,7 @@ pipeline {
         stage('Artifacts to S3') {
             steps {
                 sh '''
-                aws s3 cp target/*.war s3://mayurcbz.space/Artifacts/student.war
+                aws s3 cp target/*.war s3://shiva-student-management-bucket/Artifacts/student.war
                 '''
             }
         }
