@@ -5,11 +5,13 @@ pipeline {
     stages {
         stage('checkout') {
            steps { 
-            sh '''
-            git clone 'https://github.com/shivnandan05/studentapp-ui.git'
-
-            '''
+           checkout scm
             }
+        }
+        stage ('Build') {
+           steps { 
+            sh 'ls -la'
+            } 
         }
     }
 }
